@@ -1,13 +1,13 @@
 # BSU_7sem_Database
 ## Exchanges reference
-### Exchange Id (integer)
-### Exchange Name (text)
-### Formation Date (date)
-### Location (text)
-### Revenue (float)
+1. Exchange Id (integer)
+2. Exchange Name (text)
+3. Formation Date (date)
+4. Location (text)
+5. Revenue (float)
 ## Companies reference:
-### Company Id (integer)
-### Company Name (text)
-### Formation Date (date)
-### Exchange Traded (reference to Exchanges)
-### Employees (integer)
+1. Company Id (integer)
+2. Company Name (text)
+3. Formation Date (date)
+4. Exchange Traded (reference to Exchanges)
+5. Employees (integer)
