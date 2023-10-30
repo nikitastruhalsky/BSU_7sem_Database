@@ -10,4 +10,4 @@
 2. Company Name (text)
 3. Formation Date (date)
 4. Exchange Traded (reference to Exchanges)
-5. Employees (integer)
+5. Employees Number (integer)
