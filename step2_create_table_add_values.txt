@@ -1,0 +1,65 @@
+CREATE TABLE Exchanges ( 
+    Exchange_ID INTEGER NOT NULL UNIQUE, 
+    Exchange_Name VARCHAR2(20) NOT NULL, 
+    Formation_Date DATE NOT NULL,
+    Location VARCHAR2(40) NOT NULL, 
+    Revenue_Billion_USD NUMBER(4, 2), 
+    CONSTRAINT Revenue_Billion_USD_Check CHECK (Revenue_Billion_USD > 0) 
+);
+
+ALTER TABLE Exchanges
+	ADD PRIMARY KEY (Exchange_Name);
+
+CREATE TABLE Companies ( 
+    Company_ID INTEGER NOT NULL, 
+    Company_Name VARCHAR2(40) NOT NULL, 
+    Formation_Date DATE NOT NULL, 
+    Exchange_Name VARCHAR2(40) NOT NULL, 
+    Employees_Number NUMBER(10), 
+    CONSTRAINT Employees_Number_Check CHECK (Employees_Number > 0), 
+    CONSTRAINT Exchange_Name_FK FOREIGN KEY (Exchange_Name) REFERENCES Exchanges(Exchange_Name) 
+);
+
+ALTER TABLE Companies
+	ADD PRIMARY KEY (Company_ID);
+
+INSERT INTO Exchanges
+    VALUES (1, 'Nasdaq', TO_DATE('1971-02-08', 'YYYY-MM-DD'), 'New York City, U.S.', 6.23);
+
+INSERT INTO Exchanges
+    VALUES (2, 'NYSE', TO_DATE('1792-05-17', 'YYYY-MM-DD'), 'New York City, U.S.', 58.00);
+
+INSERT INTO Exchanges
+    VALUES (3, 'LSE', TO_DATE('1801-12-30', 'YYYY-MM-DD'), 'London, England, UK', 9.65);
+
+INSERT INTO Exchanges
+    VALUES (4, 'SSE', TO_DATE('1990-11-26', 'YYYY-MM-DD'), 'Shanghai, China', 10.72);
+
+INSERT INTO Exchanges
+    VALUES (5, 'HKEX', TO_DATE('1891-02-03', 'YYYY-MM-DD'), 'Central District, Hong Kong', 1.81);
+
+
+INSERT INTO Companies
+    VALUES(1, 'Adobe Inc.', TO_DATE('1982-12-01', 'YYYY-MM-DD'),  (SELECT Exchange_Name FROM Exchanges WHERE Exchange_ID = 1), 29239);
+
+INSERT INTO Companies
+    VALUES(2, 'Netflix Inc.', TO_DATE('1997-08-29', 'YYYY-MM-DD'),  (SELECT Exchange_Name FROM Exchanges WHERE Exchange_ID = 1), 12800);
+
+INSERT INTO Companies
+    VALUES(3, 'COCA-COLA HBC', TO_DATE('1969-03-28', 'YYYY-MM-DD'),  (SELECT Exchange_Name FROM Exchanges WHERE Exchange_ID = 3), 33000);
+
+INSERT INTO Companies
+    VALUES(4, 'Transocean Ltd', TO_DATE('1953-04-11', 'YYYY-MM-DD'),  (SELECT Exchange_Name FROM Exchanges WHERE Exchange_ID = 2), 6600);
+
+INSERT INTO Companies
+    VALUES(5, 'Barclays PLC', TO_DATE('1690-11-17', 'YYYY-MM-DD'),  (SELECT Exchange_Name FROM Exchanges WHERE Exchange_ID = 2), 87400);
+
+INSERT INTO Companies
+    VALUES(6, 'ZTE', TO_DATE('1985-06-24', 'YYYY-MM-DD'),  (SELECT Exchange_Name FROM Exchanges WHERE Exchange_ID = 4), 74811);
+
+INSERT INTO Companies
+    VALUES(7, 'China Motor Bus', TO_DATE('1923-09-02', 'YYYY-MM-DD'),  (SELECT Exchange_Name FROM Exchanges WHERE Exchange_ID = 5), 202206);
+
+SELECT * FROM Exchanges;
+
+SELECT * FROM Companies;
