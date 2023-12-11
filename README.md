@@ -15,8 +15,8 @@
 Steps to run (python3 should be installed (help link: https://docs.python.org/3/tutorial/venv.html)):
 
 Install packages by using the following commands (run one by one):
-pip install streamlit
-pip install pandas
-pip install psycopg2
-pip install sqlalchemy
+"pip install streamlit";
+"pip install pandas";
+"pip install psycopg2";
+"pip install sqlalchemy".
 Run the calculator.py script in cmd (for Windows) by typing: streamlit run lab2.py
