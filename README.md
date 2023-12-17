@@ -12,11 +12,5 @@
 4. Exchange Traded (reference to Exchanges)
 5. Employees Number (integer)
 
-Steps to run (python3 should be installed (help link: https://docs.python.org/3/tutorial/venv.html)):
-
-Install packages by using the following commands (run one by one):
-"pip install streamlit";
-"pip install pandas";
-"pip install psycopg2";
-"pip install sqlalchemy".
-Run the calculator.py script in cmd (for Windows) by typing: streamlit run lab2.py
+Создание базы данных, а также добавление туда первых данных можно увидеть в файле step2_create_table_add_values.txt. Сейчас продемонстрирую то, как работает вебсайт. Запустив скрипт, мы попадаем на главную страницу
+![image](https://github.com/nikitastruhalsky/BSU_7sem_Database/assets/70744513/33881042-af44-4de8-abc2-cfcbd7d2461a)
