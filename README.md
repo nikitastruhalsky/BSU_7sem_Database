@@ -26,7 +26,7 @@
 ![image](https://github.com/nikitastruhalsky/BSU_7sem_Database/assets/70744513/ccb4f870-897e-491d-b161-260dcf0cb90f)
 ![image](https://github.com/nikitastruhalsky/BSU_7sem_Database/assets/70744513/4a4a8218-1b90-4fd1-80f5-268fb3fa0c02)
 
-Данные в таблице можно изменять (например, изменим число сотрудников в Transocean Ltd с 6601 на 6602):
+Данные в таблице можно изменять путём ввода нового значения в нужное поле и нажатия кнопки Edit data (например, изменим число сотрудников в Transocean Ltd с 6601 на 6602):
 ![image](https://github.com/nikitastruhalsky/BSU_7sem_Database/assets/70744513/06dbf9b1-e93d-4219-bffc-50efefa06677)
 
 Также есть возможность изменить Exchange, на которой торгуются акции компании. Для этого нужно выбрать опцию change_exchange напротив соответствующей компании, выбрать внизу Exchange из выпадающего списка (содержащего все используемые в таблице Exchange БЕЗ ПОВТОРЕНИЙ) и нажать кнопку change (например, изменим Exchange для компании ZTE с SSE на NYSE). Как было:
